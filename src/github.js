@@ -83,7 +83,7 @@ export class GitHubClient {
     const clean = String(path).replace(/^\/+/, '');
     if (clean.split('/').includes('..')) throw new Error('Path traversal is not allowed');
     const encoded = clean.split('/').filter(Boolean).map(encodeURIComponent).join('/');
-    return this.request('GET', `/repos/${repo}/contents/${encoded}`);
+    return this.request('GET', `/repos/${repo}/contents${encoded ? '/' + encoded : ''}`);
   }
 
   createIssue(repo, { title, body, labels }) {

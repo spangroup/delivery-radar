@@ -119,11 +119,12 @@ See [`deploy/cron.example`](deploy/cron.example).
 npm test
 ```
 
-15 tests, no network or API keys needed:
+18 tests, no network or API keys needed:
 
 - agent loop with scripted model responses: tool results round-trip, invalid report is rejected and corrected, tool errors are returned to the model, step budget is enforced;
 - RAID log persistence and stable IDs across runs;
 - estimation parsing and metrics;
+- GitHub client URL building, path-traversal guard and token handling;
 - end-to-end CLI run (dry run and full run) against local mock GitHub and Claude APIs.
 
 ## Project layout
