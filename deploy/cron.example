@@ -1,0 +1,3 @@
+# Delivery Radar: weekly report every Monday at 07:30 (server time).
+# Install with: crontab -e   (adjust the path to where the repo is cloned)
+30 7 * * 1 cd /opt/delivery-radar && mkdir -p reports && /usr/bin/env node src/cli.js >> reports/cron.log 2>&1
